@@ -1,16 +1,12 @@
 # This is a sample Python script.
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+def day1(path):
+    with open(path) as f:
+        lines = [''.join(filter(str.isdigit, line)) for line in f.readlines()]
+        vals = [[(num[0]),(num[-1])] for num in lines]
+        numbers = [int(''.join(num)) for num in vals]
+    print(sum(numbers))
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
+    day1('/Users/chelsea/Documents/AdventOfCode2023/Day 1/inputdata.txt')
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
