@@ -15,7 +15,6 @@ def split_number_words(input_string):
 def day1(path):
     with open(path) as f:
         lines = [split_number_words(line) for line in f.readlines()]
-        print(lines)
         vals = [[(num[0]),(num[-1])] for num in lines]
         numbers = [int(''.join(num)) for num in vals]
     print(sum(numbers))

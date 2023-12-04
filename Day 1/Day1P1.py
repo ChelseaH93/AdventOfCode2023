@@ -1,5 +1,3 @@
-# This is a sample Python script.
-
 def day1(path):
     with open(path) as f:
         lines = [''.join(filter(str.isdigit, line)) for line in f.readlines()]
