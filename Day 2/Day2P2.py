@@ -1,6 +1,7 @@
 import re
 import math
-def day2(path):
+
+def day2p2(path):
     with open(path) as f:
         games = {re.findall('[^:;\s,]+', line)[1]: re.findall('[^:;\s,]+', line)[2:] for line in f.readlines()}
     powers = []
@@ -16,4 +17,4 @@ def day2(path):
     print(sum(powers))
 
 if __name__ == '__main__':
-    day2('/Users/chelsea/Documents/AdventOfCode2023/Day 2/inputdata.txt')
+    day2p2('./inputdata.txt')

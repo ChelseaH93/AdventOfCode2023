@@ -1,4 +1,4 @@
-def day3(path):
+def day3p1(path):
     with open(path) as f:
         symbols = [list(line.rstrip()) for line in f]
     print(symbols)
@@ -52,4 +52,4 @@ def day3(path):
 
 
 if __name__ == '__main__':
-    day3('/Users/chelsea/Documents/AdventOfCode2023/Day 3/InputData.txt')
+    day3p1('./InputData.txt')

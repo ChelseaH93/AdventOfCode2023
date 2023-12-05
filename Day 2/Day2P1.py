@@ -1,6 +1,8 @@
 import re
 bag = {'red': 12, 'green': 13, 'blue': 14}
-def day2(path):
+
+
+def day2p1(path):
     with open(path) as f:
         games = {re.findall('[^:;\s,]+', line)[1]: re.findall('[^:;\s,]+', line)[2:] for line in f.readlines()}
     impossible = []
@@ -14,5 +16,6 @@ def day2(path):
                     impossible.append(int(game))
     print(sum([int(g) for g in games.keys() if int(g) not in impossible]))
 
+
 if __name__ == '__main__':
-    day2('/Users/chelsea/Documents/AdventOfCode2023/Day 2/inputdata.txt')
+    day2p1('./inputdata.txt')

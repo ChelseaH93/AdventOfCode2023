@@ -1,5 +1,7 @@
 import re
-def day4(path):
+
+
+def day4p1(path):
     with open(path) as f:
         scratchcard = {re.findall('[^:;\s,]+', line)[1]: re.findall('[^:;\s,]+', line)[2:] for line in f.readlines()}
     scratchcard_worth = []
@@ -17,6 +19,5 @@ def day4(path):
     print(sum(scratchcard_worth))
 
 
-
 if __name__ == '__main__':
-    day4('/Users/chelsea/Documents/AdventOfCode2023/Day 4/InputData.txt')
+    day4p1('./InputData.txt')

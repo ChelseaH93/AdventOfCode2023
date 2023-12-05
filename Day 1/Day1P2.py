@@ -1,4 +1,6 @@
 from word2number import w2n
+
+
 def split_number_words(input_string):
     number_words = [
         'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
@@ -12,12 +14,15 @@ def split_number_words(input_string):
             elif current_word.isnumeric():
                 number_matches.append(current_word)
     return number_matches
-def day1(path):
+
+
+def day1p2(path):
     with open(path) as f:
         lines = [split_number_words(line) for line in f.readlines()]
         vals = [[(num[0]),(num[-1])] for num in lines]
         numbers = [int(''.join(num)) for num in vals]
     print(sum(numbers))
 
+
 if __name__ == '__main__':
-    day1('/Users/chelsea/Documents/AdventOfCode2023/Day 1/inputdata.txt')
+    day1p2('./inputdata.txt')

@@ -1,8 +1,12 @@
 import math
 from itertools import combinations
+
+
 def distance(p1, p2):
     return math.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
-def day3(path):
+
+
+def day3p2(path):
     with open(path) as f:
         symbols = [list(line.rstrip()) for line in f]
     whole_num_coords = []
@@ -30,14 +34,14 @@ def day3(path):
         gear_ratio = []
         for coord in coord_lst:
             i = coord[0]
-            j= coord[1]
+            j = coord[1]
             preds = [[i, j-2], [i, j-1]]
             succ = [[i, j+1], [i, j+2]]
             if not symbols[i][j-1].isdigit() and not symbols[i][j+1].isdigit():
                 gear_ratio.append(int(symbols[i][j]))
             if symbols[i][j-1].isdigit() and not symbols[i][j+1].isdigit():
                 predecessor = [symbols[n[0]][n[1]] for n in preds if n in whole_num_coords]
-                values = [''.join(predecessor),symbols[i][j]]
+                values = [''.join(predecessor), symbols[i][j]]
                 value = ''.join(values)
                 if len(gear_ratio) == 0:
                     gear_ratio.append(int(value))
@@ -64,5 +68,6 @@ def day3(path):
             gear_ratios.append(math.prod(gear_ratio))
     print(sum(gear_ratios))
 
+
 if __name__ == '__main__':
-    day3('/Users/chelsea/Documents/AdventOfCode2023/Day 3/InputData.txt')
+    day3p2('./InputData.txt')

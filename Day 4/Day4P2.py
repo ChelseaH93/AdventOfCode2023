@@ -1,5 +1,7 @@
 import re
-def day4(path):
+
+
+def day4p2(path):
     with open(path) as f:
         scratchcard = {re.findall('[^:;\s,]+', line)[1]: re.findall('[^:;\s,]+', line)[2:] for line in f.readlines()}
     card_nos = {int(k):v for (k,v) in zip(scratchcard.keys(), [0]*len(scratchcard.keys()))}
@@ -21,5 +23,6 @@ def day4(path):
                 total_cards[val] += total_cards[card] * 1
     print(sum([total_cards[card] for card in total_cards.keys()]))
 
+
 if __name__ == '__main__':
-    day4('/Users/chelsea/Documents/AdventOfCode2023/Day 4/InputData.txt')
+    day4p2('./InputData.txt')
